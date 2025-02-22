@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import Userpage from "./Pages/Userpage";
+import Generatorpage from "./Pages/Generatorpage";
 import { useEffect, useState } from "react";
 
 
@@ -23,13 +24,13 @@ function App() {
   }, [])
 
 
-  const mainrenderer = routeone ? <Userpage /> : <Login  handleRouteone={handleRouteone} />;
+  // const mainrenderer = routeone ? <Userpage /> : <Login  handleRouteone={handleRouteone} />;
 
   return (
     <>
       <div>
         <Routes>
-          <Route index element={mainrenderer} />
+          <Route index element={<Generatorpage/>} />
         </Routes>
       </div>
 
