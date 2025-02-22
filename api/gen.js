@@ -1,22 +1,12 @@
 function randgen(range) {
-  return Math.floor(Math.random() * range.length);
+  return Math.floor(Math.random() * range);
 }
 
 function generator(arr) {
-  let visited = [];
-  let result = [];
-  let br = 0;
-
-  while (true) {
-    let randval = randgen(arr);
-    if (!visited.includes(randval)) {
-      visited.push(randval);
-      result.push(arr[randval]);
-      br++;
-    }
-    if (br == arr.length) {
-      break;
-    }
+  let temp = [...arr];
+  let result = []
+  while (temp.length > 0) {
+      result.push(temp.splice(randgen(temp.length),1));
   }
   return result;
 }
@@ -164,7 +154,10 @@ data.forEach((ele) => {
   }
 });
 
+console.log(arr);
+
 arr = generator(arr);
+
 console.log(arr);
 
 
