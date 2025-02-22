@@ -1,0 +1,126 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-bg-clr:#fff;
+  --secondary-bg-clr: #e1e1e1;
+  --secondary-txt-clr:#000;
+}
+
+#root {
+  font-family: "Poppins";
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.65rem;
+}
+
+.center_flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  text-align: center;
+  position: relative;
+  background-color: var(--primary-bg-clr);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #a1a1a1;
+}
+
+.btn {
+  cursor: pointer;
+  border: 0px solid;
+  background-color: #dddddd;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.sub-btn {
+  background-color: #00ffa2;
+  transition: box-shadow 200ms;
+}
+.sub-btn:hover {
+  background-color: #06e895;
+  color: #000;
+  box-shadow: 1px 1px 5px #06e895;
+}
+.sub-btn:active {
+  color: #98e2c7;
+}
+
+.login_bg {
+  background-color: var(--secondary-bg-clr);
+  height: 100vh;
+}
+
+.card .card-heading {
+  margin: 30px;
+  font-size: 2.5rem;
+}
+
+.card > .form-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+
+.card > div input:nth-child(3) {
+  margin-top: 2rem;
+}
+
+.slogin-nav-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  padding: 1rem;
+  border: 0px;
+  display: grid;
+  place-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  background-color: #dddddd;
+  transition: background-color 200ms;
+}
+.slogin-nav-btn:hover {
+  background-color: #03ce68;
+  color: #fff;
+}
+
+.alogin-nav-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 20px;
+  width: 20px;
+  padding: 1rem;
+  border: 0px;
+  display: grid;
+  place-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  background-color: #dddddd;
+  transition: background-color 200ms;
+}
+.alogin-nav-btn:hover {
+  background-color: #03ce68;
+  color: #fff;
+}
+
+.login-card {
+  width: 400px;
+}

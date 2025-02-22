@@ -1,0 +1,59 @@
+.input__container {
+    background-color: #e0e0e0;
+    padding: 0.5rem 1rem;
+    max-height: fit-content;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.input__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 90%;
+    padding: 1rem;
+    gap: 5px;
+}
+
+.flex__input {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ffffff;
+    min-width: 100%;
+    border-radius: 5px;
+}
+
+
+.input__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1f1f1;
+    max-width: 50%;
+    margin: 0px 10px;
+    border-radius: 10px;
+    padding: 10px;
+    flex:1;
+}
+
+.input__card .form{
+    display: flex;
+    gap: 10px;
+}
+
+.input__card input[type=text]{
+    height: 40px;
+    font-size: 1.4rem;
+    outline: none;
+}
+
+.input__card button{
+    height: 40px;
+    width: 80px;   
+}
+
+

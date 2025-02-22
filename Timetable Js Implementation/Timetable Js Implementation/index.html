@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="containerid">
+      <div class="card">
+        <div>
+          <h1>TimeTable Generator</h1>
+        </div>
+        <table class="table__container">
+          <thead>
+            <tr>
+              <th rowspan="2">Period/Days</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+            </tr>
+            <tr>
+              <th>8.30Am - 9.20Am</th>
+              <th>9.20Am - 10.10Am</th>
+              <th>10.10Am - 11.00Am</th>
+              <th>11.15Am - 12.00Pm</th>
+              <th>12.00Pm - 12.45Pm</th>
+              <th>1.35Pm - 2.25Pm</th>
+              <th>2.25pm - 3.15Pm</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="sub_data_mon">
+              <th>Monday</th>
+            </tr>
+            <tr class="sub_data_tues">
+              <th>Tuesday</th>              
+            </tr>
+            <tr class="sub_data_wed">
+              <th>Wednesday</th>
+              
+            </tr>
+            <tr class="sub_data_thurs">
+              <th>Thursday</th>            
+            </tr>
+            <tr class="sub_data_fri">
+              <th>Friday</th>             
+            </tr>
+            <tr class="sub_data_sat">
+              <th>Saturday</th>              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card" style="flex-direction: row;">
+        <button class="btn" id="exe_btn">Generate</button>
+        <button class="btn" id="clr_btn">submit</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
