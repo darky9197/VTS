@@ -142,7 +142,7 @@ let data = [
 ];
 
 
-let arr = [], count_checker = 0;
+let arr = [];
 
 data.forEach((ele) => {
   if (!ele.islab) {
@@ -154,11 +154,11 @@ data.forEach((ele) => {
   }
 });
 
-
-
 arr = generator(arr);
 
 console.log(arr);
+
+
 // const btn = document.getElementById("exe_btn").addEventListener("click", () => {
 //   document.querySelectorAll("#sub").forEach((element) => {
 //     element.remove();
