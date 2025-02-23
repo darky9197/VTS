@@ -144,4 +144,6 @@ input {
   text-align: center;
   padding: 0.5rem;
   background-color: #fcfcfce0;
+  border-bottom: 1px solid;
+
 }

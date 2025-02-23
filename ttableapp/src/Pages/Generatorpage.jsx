@@ -32,6 +32,7 @@ function Generatorpage() {
 
     }
   }
+
   return (
     <>
       <form style={styles.form}>
@@ -50,8 +51,9 @@ function Generatorpage() {
           <button type='reset' onClick={insertObject}>Add</button>
         </div>
       </form>
+
       <div className='table-container'>
-        <table>
+        <table cellspacing={0}>
           <thead>
             <tr>
               <td>Subject/Lab</td>
@@ -63,15 +65,14 @@ function Generatorpage() {
           <tbody>
             {
               data.map((data, index) => {
-                <tr key={index}>
+                return(<tr key={index}>
                   <td>{data.subName}</td>
                   <td>{data.staff_id}</td>
-                  <td>{data.isLab}</td>
+                  <td>{data.islab?'yes':'no'}</td>
                   <td>{data.count}</td>
-                </tr>
+                </tr>)
               })
             }
-
           </tbody>
         </table>
       </div>
