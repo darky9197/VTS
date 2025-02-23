@@ -5,9 +5,9 @@
 }
 
 :root {
-  --primary-bg-clr:#fff;
+  --primary-bg-clr: #fff;
   --secondary-bg-clr: #e1e1e1;
-  --secondary-txt-clr:#000;
+  --secondary-txt-clr: #000;
 }
 
 #root {
@@ -124,4 +124,24 @@ input {
 
 .login-card {
   width: 400px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-container table > thead td {
+  padding: 1rem;
+  font-weight: 600;
+  margin: 0;
+  background-color: #e0e0e0e0;
+  border: 0px solid;
+}
+
+.table-container table > tbody td {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #fcfcfce0;
 }
