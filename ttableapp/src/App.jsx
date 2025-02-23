@@ -1,38 +1,40 @@
-import { Routes, Route } from "react-router-dom";
-import Login from "./Pages/Login";
-import Userpage from "./Pages/Userpage";
+//import { Routes, Route } from "react-router-dom";
+//import Login from "./Pages/Login";
+//import Userpage from "./Pages/Userpage";
 import Generatorpage from "./Pages/Generatorpage";
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 
 
 
 function App() {
-  const [routeone, setRountone] = useState(false);
+  // const [routeone, setRountone] = useState(false);
 
-  function handleRouteone() {
-    JSON.parse(localStorage.logdata).loggedin = true
-    setRountone(prev => prev ? false : true)
-  }
+  // function handleRouteone() {
+  //   JSON.parse(localStorage.logdata).loggedin = true
+  //   setRountone(prev => prev ? false : true)
+  // }
 
 
-  useEffect(() => {
-    let logdata = localStorage.getItem("logdata")
+  // useEffect(() => {
+  //   let logdata = localStorage.getItem("logdata")
 
-    if (JSON.parse(logdata).loggedin == true) {
-      setRountone(true)
-    }
-  }, [])
+  //   if (JSON.parse(logdata).loggedin == true) {
+  //     setRountone(true)
+  //   }
+  // }, [])
 
 
   // const mainrenderer = routeone ? <Userpage /> : <Login  handleRouteone={handleRouteone} />;
 
   return (
     <>
-      <div>
+      {/* <div>
         <Routes>
           <Route index element={<Generatorpage/>} />
         </Routes>
-      </div>
+        <Generatorpage/>
+      </div> */}
+      <Generatorpage/>
 
     </>
   );
