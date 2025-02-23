@@ -6,7 +6,7 @@ function generator(arr) {
   let temp = [...arr];
   let result = []
   while (temp.length > 0) {
-      result.push(temp.splice(randgen(temp.length),1));
+      result.push(temp.splice(randgen(temp.length),1)[0]);
   }
   return result;
 }
@@ -154,13 +154,11 @@ data.forEach((ele) => {
   }
 });
 
-console.log(arr);
+
 
 arr = generator(arr);
 
 console.log(arr);
-
-
 // const btn = document.getElementById("exe_btn").addEventListener("click", () => {
 //   document.querySelectorAll("#sub").forEach((element) => {
 //     element.remove();
