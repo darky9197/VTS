@@ -6,137 +6,80 @@ function generator(arr) {
   let temp = [...arr];
   let result = []
   while (temp.length > 0) {
-      result.push(temp.splice(randgen(temp.length),1)[0]);
+    result.push(temp.splice(randgen(temp.length), 1)[0]);
   }
   return result;
 }
 
-function SCIF(arr, arrl) {
-  let subs_visited = [];
-  let labs_visited = [];
-  let monday, tuesday, wednesday, thursday, friday, saturday;
+function SCIF(data) {
+  let temp = [...data];
+  const tabledata = {
+    monday: SCIF2(temp),
+    tuesday: SCIF2(),
+    wednesday: SCIF2(),
+    thursday: SCIF2(),
+    friday: SCIF2(),
+    saturday: SCIF2()
+  }
 
-  monday = SCIF2(arr, arrl, subs_visited, labs_visited);
-  tuesday = SCIF2(arr, arrl, subs_visited, labs_visited);
-  wednesday = SCIF2(arr, arrl, subs_visited, labs_visited);
-  thursday = SCIF2(arr, arrl, subs_visited, labs_visited);
-  friday = SCIF2(arr, arrl, subs_visited, labs_visited);
-  saturday = SCIF2(arr, arrl, subs_visited, labs_visited);
 
-  monday = generator(monday);
-  tuesday = generator(tuesday);
-  wednesday = generator(wednesday);
-  thursday = generator(thursday);
-  friday = generator(friday);
-  saturday = generator(saturday);
-
-  console.log(monday, tuesday, wednesday, thursday, friday, saturday);
 }
 
-function SCIF2(arr, arrl, subs_visited, labs_visited) {
-  let repeater = [];
-  let result = [];
-  let lab,
-    randlab,
-    subslength = 0;
-  let br1 = 0;
-  let br2 = 0;
+function SCIF2(data) {
+  
 
-  // lab selector
-
-  if (labs_visited.length >= arrl.length) {
-    randlab = undefined;
-  } else {
-    while (true) {
-      randlab = randgen(arrl);
-      lab = arrl[randlab].data;
-      if (!labs_visited.includes(randlab)) {
-        labs_visited.push(randlab);
-        br2++;
-      }
-      if (br2 == 1) {
-        break;
-      }
-    }
-  }
-
-  if (randlab == undefined) {
-    subslength = 7;
-  } else {
-    subslength = 7 - arrl[randlab].count;
-  }
-
-  while (true) {
-    let randsub = randgen(arr);
-    if (!subs_visited.includes(randsub)) {
-      subs_visited.push(randsub);
-      result.push(arr[randsub]);
-      br1++;
-      // if (!repeater.includes(arr[randsub])) {
-      //   repeater.push(arr[randsub]);
-
-      // }
-    }
-
-    if (br1 == subslength) {
-      result.push(lab);
-      break;
-    }
-  }
-
-  return result.filter(ele => ele != undefined);
 }
 
 /* <==== Main Functions ====> */
 
 let data = [
   {
-    data: "DM", staff_id: 100,
+    data: "DM", staff_id: 100, in_afternoon: false,
     islab: false, count: 6
   },
   {
-    data: "DPCO", staff_id: 101,
+    data: "DPCO", staff_id: 101, in_afternoon: false,
     islab: false, count: 4
   },
   {
-    data: "FDS", staff_id: 102,
+    data: "FDS", staff_id: 102, in_afternoon: false,
     islab: false, count: 7
   },
   {
-    data: "DSA", staff_id: 103,
+    data: "DSA", staff_id: 103, in_afternoon: false,
     islab: false, count: 5
   },
   {
-    data: "OOPS", staff_id: 104,
+    data: "OOPS", staff_id: 104, in_afternoon: false,
     islab: false, count: 6
   },
   {
-    data: "placement", staff_id: 103,
+    data: "placement", staff_id: 103, in_afternoon: false,
     islab: false, count: 1
   },
   {
-    data: "Library", staff_id: 104,
+    data: "Library", staff_id: 104, in_afternoon: false,
     islab: false, count: 1
   },
   {
-    data: "DSA LAB", staff_id: 103,
+    data: "DSA LAB", staff_id: 103, in_afternoon: true,
     islab: true, count: 3
   },
   {
-    data: "OOPS LAB", staff_id: 104,
+    data: "OOPS LAB", staff_id: 104, in_afternoon: true,
     islab: true, count: 3
   },
   {
-    data: "DPCO LAB", staff_id: 101,
+    data: "DPCO LAB", staff_id: 101, in_afternoon: false,
     islab: true, count: 2
   },
   // { data: "DS LAB", count: 3 },
   {
-    data: "PD LAB", staff_id: 102,
+    data: "PD LAB", staff_id: 102, in_afternoon: true,
     islab: true, count: 2
   },
   {
-    data: "Activity", staff_id: 104,
+    data: "Activity", staff_id: 104, in_afternoon: true,
     islab: true, count: 2
   },
 ];
@@ -152,39 +95,13 @@ data.forEach((ele) => {
   } else {
     arr.push(ele);
   }
+  count_checker = count_checker + ele.count;
 });
 
 arr = generator(arr);
 
-console.log(arr);
+console.log(arr, count_checker);
 
-
-// const btn = document.getElementById("exe_btn").addEventListener("click", () => {
-//   document.querySelectorAll("#sub").forEach((element) => {
-//     element.remove();
-//     console.clear();
-//   });
-
-//   datas.forEach((e) => {
-//     count_checker = count_checker + e.count
-//   })
-//   datal.forEach((e) => {
-//     count_checker = count_checker + e.count
-//   })
-
-
-//   if (count_checker == 42) {
-//     arr = generator(arr);
-//     SCIF(arr, datal);
-//     count_checker = 0;
-//   }
-//   else if (count_checker < 42) {
-//     alert("Number of periods doesn't reach 42")
-//     count_checker = 0;
-//   }
-//   else {
-//     alert("Number of periods exceeds 42")
-//     count_checker = 0;
-//   }
-
-// });
+if (count_checker == 42) {
+  SCIF(data);
+}
