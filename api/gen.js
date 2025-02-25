@@ -4,6 +4,7 @@ function randgen(range) {
 
 function generator(arr) {
   let temp = [...arr];
+  
   let result = []
   while (temp.length > 0) {
     result.push(temp.splice(randgen(temp.length), 1)[0]);
@@ -15,18 +16,31 @@ function SCIF(data) {
   let temp = [...data];
   const tabledata = {
     monday: SCIF2(temp),
-    tuesday: SCIF2(),
-    wednesday: SCIF2(),
-    thursday: SCIF2(),
-    friday: SCIF2(),
-    saturday: SCIF2()
+    tuesday: SCIF2(temp),
+    wednesday: SCIF2(temp),
+    thursday: SCIF2(temp),
+    friday: SCIF2(temp),
+    saturday: SCIF2(temp)
   }
 
+  console.log(tabledata.monday.length,tabledata.tuesday.length,tabledata.wednesday.length,tabledata.thursday.length,tabledata.friday.length,tabledata.saturday.length);
 
 }
 
 function SCIF2(data) {
-  
+  let count = 0;
+  let result = [];
+  while(count != 8){
+    let randval = randgen(data.length);
+    if(data[randval].islab === true){
+      count += data[randval].count;
+    }else{
+      count ++;
+    }
+    result.push(data.splice(randval, 1)[0]);
+  }
+
+  return result;
 
 }
 
@@ -85,7 +99,7 @@ let data = [
 ];
 
 
-let arr = [];
+let arr = [],count_checker=0;
 
 data.forEach((ele) => {
   if (!ele.islab) {
@@ -100,8 +114,9 @@ data.forEach((ele) => {
 
 arr = generator(arr);
 
-console.log(arr, count_checker);
+console.log(count_checker);
 
 if (count_checker == 42) {
-  SCIF(data);
+  SCIF(arr);
 }
+
