@@ -1,0 +1,74 @@
+[
+  {
+    "department": "IT",
+    "class": { "year": 1, "section": "A" },
+    "table": {
+      "monday": [],
+      "tuesday": [],
+      "wednesday": [],
+      "thursday": [],
+      "friday": [],
+      "saturday": []
+    }
+  },
+  {
+    "department": "IT",
+    "class": { "year": 1, "section": "B" },
+    "table": {
+      "monday": [],
+      "tuesday": [],
+      "wednesday": [],
+      "thursday": [],
+      "friday": [],
+      "saturday": []
+    }
+  },
+  {
+    "department": "IT",
+    "class": { "year": 2, "section": "A" },
+    "table": {
+      "monday": [],
+      "tuesday": [],
+      "wednesday": [],
+      "thursday": [],
+      "friday": [],
+      "saturday": []
+    }
+  },
+  {
+    "department": "IT",
+    "class": { "year": 2, "section": "B" },
+    "table": {
+      "monday": [],
+      "tuesday": [],
+      "wednesday": [],
+      "thursday": [],
+      "friday": [],
+      "saturday": []
+    }
+  },
+  {
+    "department": "IT",
+    "class": { "year": 3, "section": "A" },
+    "table": {
+      "monday": [],
+      "tuesday": [],
+      "wednesday": [],
+      "thursday": [],
+      "friday": [],
+      "saturday": []
+    }
+  },
+  {
+    "department": "IT",
+    "class": { "year": 4, "section": "A" },
+    "table": {
+      "monday": [],
+      "tuesday": [],
+      "wednesday": [],
+      "thursday": [],
+      "friday": [],
+      "saturday": []
+    }
+  }
+]
