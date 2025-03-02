@@ -1,4 +1,3 @@
-const { set } = require('mongoose');
 let tabledata = require('./local_database/tabledata.json')
 
 function randgen(range) {
@@ -6,46 +5,45 @@ function randgen(range) {
 }
 
 function generator(arr) {
-  let temp = [...arr];
-
-  let result = []
-  while (temp.length > 0) {
-    result.push(temp.splice(randgen(temp.length), 1)[0]);
+  let temp = [...arr], result = [], last = 0;
+  while (temp.length > 1) {
+    let rand = randgen(temp.length)
+    if (rand != last) {
+      result.push(temp.splice(rand, 1)[0]);
+      last = rand;
+    }
   }
-  temp = [...result];
+  result.push(temp.splice(0, 1)[0]);
 
-  let result1 = []
-  while (temp.length > 0) {
-    result.push(temp.splice(randgen(temp.length), 1)[0]);
-  }
-
-  return result1;
+  return result;
 }
 
 function SCIF(data, settings) {
   let temp = [...data];
   const tabledata = {
     monday: SCIF2(temp, settings, "monday"),
-    // tuesday: SCIF2(temp),
-    // wednesday: SCIF2(temp),
-    // thursday: SCIF2(temp),
-    // friday: SCIF2(temp),
-    // saturday: SCIF2(temp)
+    tuesday: SCIF2(temp, settings, "tuesday"),
+    // wednesday: SCIF2(temp, settings, "wednesday"),
+    // thursday: SCIF2(temp, settings, "thursday"),
+    // friday: SCIF2(temp, settings, "friday"),
+    // saturday: SCIF2(temp, settings, "saturday")
   }
 
-
+  return tabledata;
 }
 
 function SCIF2(subs_data, settings, day) {
-  let period_count = 7, randval = 0,temp = [[], []];
-  const periods = { 
+  let period_count = 7, randval = 0, temp = [[], []];
+  const periods = {
     data: [],
-    class: [], 
-    set: [0, 0] 
+    class: [],
+    set: [0, 0],
+    decider_set: [0, 0]
   }
 
   if (settings.class_profile.year == 2 || settings.class_profile.year == 3) {
     periods.set = [5, 2];
+    periods.decider_set = [5, 2];
     if (settings[day].need_lab) {
 
     } else {
@@ -53,27 +51,30 @@ function SCIF2(subs_data, settings, day) {
         // selection loop
         while (true) {
           randval = randgen(subs_data.length);
-          // && (periods.class.includes(subs_data[randval].data))
-          if (!subs_data[randval].islab) {
+          if (!subs_data[randval].islab && !(periods.class.includes(subs_data[randval].data))) {
+            periods.class.push(subs_data[randval].data);
             break;
           }
         }
-
         if (periods.set[0] != 0) {
           temp[0].unshift(subs_data.splice(randval, 1)[0]);
-          periods.class.push(subs_data[randval].data);
           periods.set[0]--;
         } else {
           temp[1].unshift(subs_data.splice(randval, 1)[0]);
-          // periods.class.push(subs_data[randval].data);
         }
-        
         period_count--;
       }
     }
   }
-  console.log(temp);
-  // return result;
+  // console.log(temp[0][0]);
+  for (let i = 0; i < periods.decider_set[1]; i++) {
+    for (let j = 0; j < periods.decider_set[0]; j++) {
+      if (i == 1) periods.decider_set[0] = 2;
+      periods.data.push(temp[i][j]);
+    }
+  }
+  // console.log(periods.data);
+  return periods.data;
 
 }
 
@@ -158,10 +159,8 @@ data.subs.forEach((ele) => {
 
 arr = generator(arr);
 
-
-
 if (count_checker == 42) {
-  SCIF(arr, data.days_settings);
-  // console.log(arr);
+  let tabledata = SCIF(arr, data.days_settings);
+  console.log(tabledata);
 }
 
