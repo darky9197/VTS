@@ -1,4 +1,4 @@
-let tabledata = require('./local_database/tabledata.json')
+let table_data = require('./local_database/tabledata.json')
 
 function randgen(range) {
   return Math.floor(Math.random() * range);
@@ -22,7 +22,7 @@ function SCIF(data, settings) {
   let temp = [...data];
   const tabledata = {
     monday: SCIF2(temp, settings, "monday"),
-    tuesday: SCIF2(temp, settings, "tuesday"),
+    // tuesday: SCIF2(temp, settings, "tuesday"),
     // wednesday: SCIF2(temp, settings, "wednesday"),
     // thursday: SCIF2(temp, settings, "thursday"),
     // friday: SCIF2(temp, settings, "friday"),
@@ -33,7 +33,7 @@ function SCIF(data, settings) {
 }
 
 function SCIF2(subs_data, settings, day) {
-  let period_count = 7, randval = 0, temp = [[], []];
+  let period_count = 7, randval = 0,it=0, temp = [[], []];
   const periods = {
     data: [],
     class: [],
@@ -52,8 +52,19 @@ function SCIF2(subs_data, settings, day) {
         while (true) {
           randval = randgen(subs_data.length);
           if (!subs_data[randval].islab && !(periods.class.includes(subs_data[randval].data))) {
-            periods.class.push(subs_data[randval].data);
-            break;
+            let flg = 0;
+            table_data.forEach(data =>{
+              if(data.table[day].length>0){
+                console.log(data.table[day].at((period_count - (period_count - it++))).staff_id);
+                // if(data.table[day].at((period_count - (period_count - it++))).staff_id == subs_data[randval].staff_id || undefined){
+                //   flg = 1;
+                // }
+              }
+            })
+            if(flg == 0){
+              periods.class.push(subs_data[randval].data);
+              break;
+            }
           }
         }
         if (periods.set[0] != 0) {
@@ -66,11 +77,18 @@ function SCIF2(subs_data, settings, day) {
       }
     }
   }
-  // console.log(temp[0][0]);
+
   for (let i = 0; i < periods.decider_set[1]; i++) {
     for (let j = 0; j < periods.decider_set[0]; j++) {
       if (i == 1) periods.decider_set[0] = 2;
-      periods.data.push(temp[i][j]);
+
+      if (temp[i][j].islab) {
+        for (let k = 0; k < temp[i][j].count; k++) {
+          periods.data.push(temp[i][j]);
+        }
+      } else {
+        periods.data.push(temp[i][j]);
+      }
     }
   }
   // console.log(periods.data);
@@ -135,7 +153,7 @@ let data = {
   days_settings: {
     class_profile: { year: 2, section: 'A' },
     monday: { data: [], need_lab: false, in_afternoon: true },
-    tuesday: { data: [], need_lab: true, in_afternoon: true },
+    tuesday: { data: [], need_lab: false, in_afternoon: true },
     wednesday: { data: [], need_lab: true, in_afternoon: true },
     thursday: { data: [], need_lab: true, in_afternoon: true },
     friday: { data: [], need_lab: true, in_afternoon: true },
@@ -160,7 +178,7 @@ data.subs.forEach((ele) => {
 arr = generator(arr);
 
 if (count_checker == 42) {
-  let tabledata = SCIF(arr, data.days_settings);
-  console.log(tabledata);
+  let result = SCIF(arr, data.days_settings);
+  // console.log(result);
 }
 
