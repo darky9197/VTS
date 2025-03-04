@@ -2,6 +2,7 @@
 //import Login from "./Pages/Login";
 //import Userpage from "./Pages/Userpage";
 import Generatorpage from "./Pages/Generatorpage";
+import Tableviewform from "./Pages/Tableviewform";
 //import { useEffect, useState } from "react";
 
 
@@ -34,7 +35,8 @@ function App() {
         </Routes>
         <Generatorpage/>
       </div> */}
-      <Generatorpage/>
+      {/* <Generatorpage/> */}
+      <Tableviewform/>
 
     </>
   );
