@@ -1,6 +1,7 @@
 //import { Routes, Route } from "react-router-dom";
 //import Login from "./Pages/Login";
 //import Userpage from "./Pages/Userpage";
+import AdminView from "./Pages/AdminView";
 import Generatorpage from "./Pages/Generatorpage";
 import Tableviewform from "./Pages/Tableviewform";
 //import { useEffect, useState } from "react";
@@ -36,7 +37,8 @@ function App() {
         <Generatorpage/>
       </div> */}
       {/* <Generatorpage/> */}
-      <Tableviewform/>
+      {/* <Tableviewform/> */}
+      <AdminView/>
 
     </>
   );
