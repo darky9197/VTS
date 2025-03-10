@@ -8,8 +8,8 @@ function Tableviewform() {
   return (
     <Formstyle>
     <div className='cont'>
-      <h1>View Time Table</h1><br />
       <form action="">
+        <h1>View Time Table</h1><br />
         <select className='dept' >
             <option value="">Choose Department</option>
             <option value="IT">IT</option>
@@ -63,7 +63,7 @@ width:150px;
 padding:5px;
 width:100%;
 font-size:20px;
-
+border-radius:5px;
 }
 form{
 display:flex;
