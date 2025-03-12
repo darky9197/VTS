@@ -3,8 +3,8 @@ import Tableviewform from './Tableviewform'
 import styled from 'styled-components'
 
 function AdminView() {
-    const [radioval,setRadio] = useState("Yes");
-    const [sesseion, setSession] = useState("Morning");
+    const [radioval,setRadio] = useState("");
+    const [sesseion, setSession] = useState("");
 
     const radioChange = (value)=>{  
         setRadio(value);

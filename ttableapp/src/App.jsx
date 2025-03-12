@@ -2,6 +2,7 @@
 //import Login from "./Pages/Login";
 //import Userpage from "./Pages/Userpage";
 import AdminView from "./Pages/AdminView";
+import Entry from "./Pages/Entry";
 import Generatorpage from "./Pages/Generatorpage";
 import Tableviewform from "./Pages/Tableviewform";
 //import { useEffect, useState } from "react";
@@ -36,10 +37,13 @@ function App() {
         </Routes>
         <Generatorpage/>
       </div> */}
+      
+      {/* Important components dont to be delete */}
+
       {/* <Generatorpage/> */}
       {/* <Tableviewform/> */}
-      <AdminView/>
-
+      {/* <AdminView/> */}
+      <Entry/>
     </>
   );
 }
