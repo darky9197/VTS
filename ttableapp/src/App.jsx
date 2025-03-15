@@ -1,6 +1,7 @@
 //import { Routes, Route } from "react-router-dom";
 //import Login from "./Pages/Login";
 //import Userpage from "./Pages/Userpage";
+import { useState } from "react";
 import AdminView from "./Pages/AdminView";
 import Entry from "./Pages/Entry";
 import Generatorpage from "./Pages/Generatorpage";
@@ -28,6 +29,7 @@ function App() {
 
 
   // const mainrenderer = routeone ? <Userpage /> : <Login  handleRouteone={handleRouteone} />;
+  const [comp,setComp] = useState(false)
 
   return (
     <>
@@ -42,8 +44,11 @@ function App() {
 
       {/* <Generatorpage/> */}
       {/* <Tableviewform/> */}
+      {!comp?
+      (<Entry adminComp={()=>setComp(true)}/>)
+      :
+      (<AdminView/>)}
       {/* <AdminView/> */}
-      <Entry/>
     </>
   );
 }

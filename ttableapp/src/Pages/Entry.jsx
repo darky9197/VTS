@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import velammallogo from "../images/velammallogo.png"
-const Formone = ({toggleForm})=>{
+
+
+const Formone = ({toggleForm,adminComp})=>{
     return(
         <EntryStyle>
         <div>
@@ -9,7 +11,7 @@ const Formone = ({toggleForm})=>{
                 <h1>User Entry</h1>
                 <input type="text" placeholder='Enter user ID' />
                 <input type="password" placeholder='Enter Password' />
-                <button type='submit'>Signin</button>
+                <button onClick={adminComp} type='submit'>Signin</button>
                 <button onClick={toggleForm}>Admin Entry</button>
             </form>
         </div>
@@ -17,7 +19,7 @@ const Formone = ({toggleForm})=>{
     )
 };
 
-const Formtwo = ({toggleForm})=>{
+const Formtwo = ({toggleForm,adminComp})=>{
     return(
         <EntryStyle>
         <div>
@@ -25,14 +27,14 @@ const Formtwo = ({toggleForm})=>{
                 <h1>Admin Entry</h1>
                 <input type="text" placeholder='Enter Admin ID' />
                 <input type="password" placeholder='Enter Password' />
-                <button type='submit' >Signin</button>
+                <button onClick={adminComp} type='submit' >Signin</button>
                 <button onClick={toggleForm}>User Entry</button>
             </form>
         </div>
         </EntryStyle>
     )
 };
-function Entry() {
+function Entry({adminComp}) {
 
     const [formView,setFormView] = useState(false)
 
@@ -43,11 +45,12 @@ function Entry() {
         <img src={velammallogo} width={700} alt="Technical Error Trying After Some Time" />
         <h2>Time Table Generator</h2>
     </div>
-    {formView ? <Formone toggleForm={()=>setFormView(false)}/> : <Formtwo toggleForm={()=>setFormView(true)}/>}
+    {formView ? <Formone toggleForm={()=>setFormView(false)} adminComp={adminComp}/> : <Formtwo toggleForm={()=>setFormView(true)} adminComp={adminComp}/>}
     </EntryStyle>
     </>
   )
 }
+
 
 const EntryStyle = styled.div`
 div{
@@ -83,6 +86,7 @@ margin-top:20px;
 color:white;
 font-weight:bold;
 border-radius:5px;
+cursor:pointer;
 }
 button:hover{
 background-color:rgb(43, 161, 63);
