@@ -48,7 +48,7 @@ function SCIF2(subs_data, settings, day) {
 
     } else {
       while (period_count != 0) {
-        // selection loop
+        // selector loop
         while (true) {
           randval = randgen(subs_data.length);
           if (!subs_data[randval].islab && !(periods.class.includes(subs_data[randval].data))) {

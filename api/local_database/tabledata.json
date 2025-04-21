@@ -1,7 +1,10 @@
 [
   {
     "department": "IT",
-    "class": { "year": 1, "section": "A" },
+    "class": {
+      "year": 1,
+      "section": "A"
+    },
     "table": {
       "monday": [],
       "tuesday": [],
@@ -13,7 +16,10 @@
   },
   {
     "department": "IT",
-    "class": { "year": 1, "section": "B" },
+    "class": {
+      "year": 1,
+      "section": "B"
+    },
     "table": {
       "monday": [],
       "tuesday": [],
@@ -25,16 +31,54 @@
   },
   {
     "department": "IT",
-    "class": { "year": 2, "section": "A" },
+    "class": {
+      "year": 2,
+      "section": "A"
+    },
     "table": {
       "monday": [
-        { "data": "Library", "staff_id": 104, "islab": false, "count": 1 },
-        { "data": "DSA", "staff_id": 103, "islab": false, "count": 5 },
-        { "data": "FDS", "staff_id": 102, "islab": false, "count": 7 },
-        { "data": "DM", "staff_id": 100, "islab": false, "count": 6 },
-        { "data": "OOPS", "staff_id": 104, "islab": false, "count": 6 },
-        { "data": "placement", "staff_id": 103, "islab": false, "count": 1 },
-        { "data": "DPCO", "staff_id": 101, "islab": false, "count": 4 }
+        {
+          "data": "Library",
+          "staff_id": 104,
+          "islab": false,
+          "count": 1
+        },
+        {
+          "data": "DSA",
+          "staff_id": 103,
+          "islab": false,
+          "count": 5
+        },
+        {
+          "data": "FDS",
+          "staff_id": 102,
+          "islab": false,
+          "count": 7
+        },
+        {
+          "data": "DM",
+          "staff_id": 100,
+          "islab": false,
+          "count": 6
+        },
+        {
+          "data": "OOPS",
+          "staff_id": 104,
+          "islab": false,
+          "count": 6
+        },
+        {
+          "data": "placement",
+          "staff_id": 103,
+          "islab": false,
+          "count": 1
+        },
+        {
+          "data": "DPCO",
+          "staff_id": 101,
+          "islab": false,
+          "count": 4
+        }
       ],
       "tuesday": [],
       "wednesday": [],
@@ -45,7 +89,10 @@
   },
   {
     "department": "IT",
-    "class": { "year": 2, "section": "B" },
+    "class": {
+      "year": 2,
+      "section": "B"
+    },
     "table": {
       "monday": [],
       "tuesday": [],
@@ -57,16 +104,54 @@
   },
   {
     "department": "IT",
-    "class": { "year": 3, "section": "A" },
+    "class": {
+      "year": 3,
+      "section": "A"
+    },
     "table": {
       "monday": [
-        { "data": "Library", "staff_id": 104, "islab": false, "count": 1 },
-        { "data": "DSA", "staff_id": 103, "islab": false, "count": 5 },
-        { "data": "FDS", "staff_id": 102, "islab": false, "count": 7 },
-        { "data": "DM", "staff_id": 100, "islab": false, "count": 6 },
-        { "data": "OOPS", "staff_id": 104, "islab": false, "count": 6 },
-        { "data": "placement", "staff_id": 103, "islab": false, "count": 1 },
-        { "data": "DPCO", "staff_id": 101, "islab": false, "count": 4 }
+        {
+          "data": "Library",
+          "staff_id": 104,
+          "islab": false,
+          "count": 1
+        },
+        {
+          "data": "DSA",
+          "staff_id": 103,
+          "islab": false,
+          "count": 5
+        },
+        {
+          "data": "FDS",
+          "staff_id": 102,
+          "islab": false,
+          "count": 7
+        },
+        {
+          "data": "DM",
+          "staff_id": 100,
+          "islab": false,
+          "count": 6
+        },
+        {
+          "data": "OOPS",
+          "staff_id": 104,
+          "islab": false,
+          "count": 6
+        },
+        {
+          "data": "placement",
+          "staff_id": 103,
+          "islab": false,
+          "count": 1
+        },
+        {
+          "data": "DPCO",
+          "staff_id": 101,
+          "islab": false,
+          "count": 4
+        }
       ],
       "tuesday": [],
       "wednesday": [],
@@ -77,7 +162,10 @@
   },
   {
     "department": "IT",
-    "class": { "year": 4, "section": "A" },
+    "class": {
+      "year": 4,
+      "section": "A"
+    },
     "table": {
       "monday": [],
       "tuesday": [],
